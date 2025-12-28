@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.login-container {
+    width: 350px;
+    margin: 80px auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Forgot password link */
+.link-row {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.forgot-link {
+    font-size: 14px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+.button-group {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.login-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.reset-btn {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.reset-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Create account section */
+.create-account {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.create-account a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.create-account a:hover {
+    text-decoration: underline;
+}
