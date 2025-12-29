@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eesha Movie Tickets</title>
+    <link rel="stylesheet" href="movie-details.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="topbar">
+    <button class="back-btn" onclick="goHome()">← Home</button>
+    <div class="top-title">Eesha</div>
+</header>
+
+<!-- MOVIE INFO -->
+<section class="movie-info">
+    <img src="https://via.placeholder.com/150x230" alt="Eesha Poster">
+    <div class="details">
+        <h2>Eesha</h2>
+        <p>Telugu • 2 hr 8 min</p>
+    </div>
+</section>
+
+<!-- DATES -->
+<section class="date-select">
+    <button class="date active">28 Sun</button>
+    <button class="date">29 Mon</button>
+    <button class="date">30 Tue</button>
+    <button class="date">31 Wed</button>
+</section>
+
+<!-- FILTERS -->
+<section class="filters">
+    <button class="filter-btn">After 5 PM</button>
+    <button class="filter-btn">Recliners</button>
+    <button class="filter-btn">Wheelchair Friendly</button>
+    <button class="filter-btn">Premium Seats</button>
+</section>
+
+<!-- THEATRE LIST -->
+<section class="theatre-list">
+    <div class="theatre-card">
+        <div class="theatre-name">INOX Maheshwari Parmeshwari Mall, Kachiguda</div>
+        <div class="showtimes">
+            <button onclick="selectShow('09:30 PM')">09:30 PM</button>
+            <button onclick="selectShow('10:40 PM')">10:40 PM</button>
+        </div>
+    </div>
+
+    <div class="theatre-card">
+        <div class="theatre-name">PVR Next Galleria Mall, Panjagutta</div>
+        <div class="showtimes">
+            <button onclick="selectShow('08:00 PM')">08:00 PM</button>
+            <button onclick="selectShow('10:20 PM')">10:20 PM</button>
+        </div>
+    </div>
+
+    <div class="theatre-card">
+        <div class="theatre-name">Miraj Cinemas : Raghavendra</div>
+        <div class="showtimes">
+            <button onclick="selectShow('11:00 AM')">11:00 AM</button>
+            <button onclick="selectShow('02:30 PM')">02:30 PM</button>
+        </div>
+    </div>
+</section>
+
+<script src="movie-details.js"></script>
+</body>
+</html>

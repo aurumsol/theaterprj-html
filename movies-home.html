@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies | TheatreHub</title>
+    <link rel="stylesheet" href="movies-home.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="topbar">
+    <div class="left">
+        <div class="logo">Theatre<span>Hub</span></div>
+        <div class="location">📍 Hyderabad</div>
+    </div>
+
+    <div class="right">
+        <input type="text" placeholder="Search for movies">
+    </div>
+</header>
+
+<!-- TABS -->
+<nav class="tabs">
+    <span class="active">Movies</span>
+    <span>Events</span>
+    <span>Activities</span>
+</nav>
+
+<!-- HERO SLIDER (SIMPLE STATIC) -->
+<section class="hero">
+    <h1>Movies in Hyderabad</h1>
+</section>
+
+<!-- MOVIES SECTION -->
+<section class="container">
+    <h2>This Week’s Releases</h2>
+
+    <div class="movie-grid">
+        <div class="movie-card" onclick="openMovie('eesha')">
+            <img src="https://via.placeholder.com/220x320">
+            <h3>Eesha</h3>
+            <p>Drama • Telugu</p>
+        </div>
+
+        <div class="movie-card" onclick="openMovie('dhurandhar')">
+            <img src="https://via.placeholder.com/220x320">
+            <h3>Dhurandhar</h3>
+            <p>Action • Hindi</p>
+        </div>
+
+        <div class="movie-card" onclick="openMovie('shambhala')">
+            <img src="https://via.placeholder.com/220x320">
+            <h3>Shambhala</h3>
+            <p>Thriller • Telugu</p>
+        </div>
+    </div>
+</section>
+
+<script src="movies-home.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f4f7fb;
+}
+
+/* HEADER */
+.topbar {
+    background: #0f4c81;
+    color: white;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #cfe8ff;
+}
+
+.location {
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.right input {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+/* TABS */
+.tabs {
+    background: white;
+    padding: 12px 24px;
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #e5eaf1;
+}
+
+.tabs span {
+    cursor: pointer;
+    color: #555;
+}
+
+.tabs .active {
+    color: #0f4c81;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    padding: 30px 24px;
+    background: linear-gradient(to right, #e8f2ff, #f9fbff);
+}
+
+.hero h1 {
+    margin: 0;
+    color: #0f4c81;
+}
+
+/* CONTENT */
+.container {
+    padding: 24px;
+}
+
+.container h2 {
+    margin-bottom: 16px;
+    color: #0f4c81;
+}
+
+/* MOVIE GRID */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.movie-card {
+    background: white;
+    border-radius: 14px;
+    padding-bottom: 12px;
+    box-shadow: 0 6px 18px rgba(15, 76, 129, 0.12);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.movie-card img {
+    width: 100%;
+    border-radius: 14px 14px 0 0;
+}
+
+.movie-card h3 {
+    margin: 10px 12px 4px;
+}
+
+.movie-card p {
+    margin: 0 12px;
+    font-size: 14px;
+    color: #666;
+}

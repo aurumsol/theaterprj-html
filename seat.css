@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+}
+
+/* HEADER */
+.topbar {
+    background: #0f4c81;
+    color: white;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.back {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+/* PRICE INFO */
+.price-info {
+    padding: 12px 20px;
+    font-weight: bold;
+    color: #0f4c81;
+    border-bottom: 1px solid #e6ecf3;
+}
+
+/* SEAT AREA */
+.seat-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.row-label {
+    width: 24px;
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+}
+
+/* SEATS */
+.seat {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    text-align: center;
+    line-height: 28px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.seat.available {
+    background: white;
+}
+
+.seat.selected {
+    background: #1f6fb2;
+    color: white;
+    border-color: #1f6fb2;
+}
+
+.seat.occupied {
+    background: #e5e7eb;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* SCREEN */
+.screen {
+    margin: 25px 0 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+}
+
+/* LEGEND */
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 13px;
+    margin-bottom: 90px;
+}
+
+.legend .seat {
+    margin-right: 5px;
+}
+
+/* BOTTOM BAR */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: white;
+    border-top: 1px solid #e5eaf1;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom-bar button {
+    background: #0f4c81;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
