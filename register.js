@@ -1,23 +1,48 @@
-document.getElementById("registerForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
 
-    const password = document.getElementById("password").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
+    const form = document.getElementById("registerForm");
 
-    const sec1 = document.getElementById("sec1").value.trim();
-    const sec2 = document.getElementById("sec2").value.trim();
-    const sec3 = document.getElementById("sec3").value.trim();
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-    if (password !== confirmPassword) {
-        alert("Passwords do not match");
-        return;
-    }
+        const password = document.getElementById("password").value.trim();
+        const confirmPassword = document.getElementById("confirmPassword").value.trim();
 
-    if (sec1 === "" || sec2 === "" || sec3 === "") {
-        alert("Please answer all security questions");
-        return;
-    }
+        const sec1 = document.getElementById("sec1").value.trim();
+        const sec2 = document.getElementById("sec2").value.trim();
+        const sec3 = document.getElementById("sec3").value.trim();
 
-    alert("Registration successful");
-    // window.location.href = "index.html";
+        if (!isValidPassword(password)) {
+            alert(
+                "Password must:\n" +
+                "- Be at least 8 characters\n" +
+                "- Include uppercase letter\n" +
+                "- Include lowercase letter\n" +
+                "- Include number\n" +
+                "- Include special character"
+            );
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+        }
+
+        if (sec1 === "" || sec2 === "" || sec3 === "") {
+            alert("All security questions must be answered");
+            return;
+        }
+
+        alert("Registration successful!");
+        window.location.href = "index.html";
+    });
+
 });
+
+/* Password Validation Function */
+function isValidPassword(password) {
+    const regex =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
+    return regex.test(password);
+}
