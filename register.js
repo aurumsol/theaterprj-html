@@ -1,48 +1,58 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.getElementById("registerForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-    const form = document.getElementById("registerForm");
+    // Get values
+    const mobile = document.getElementById("mobile").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+    // Error elements
+    const mobileError = document.getElementById("mobileError");
+    const emailError = document.getElementById("emailError");
+    const passwordError = document.getElementById("passwordError");
+    const confirmPasswordError = document.getElementById("confirmPasswordError");
 
-        const password = document.getElementById("password").value.trim();
-        const confirmPassword = document.getElementById("confirmPassword").value.trim();
+    // Clear previous errors
+    mobileError.textContent = "";
+    emailError.textContent = "";
+    passwordError.textContent = "";
+    confirmPasswordError.textContent = "";
 
-        const sec1 = document.getElementById("sec1").value.trim();
-        const sec2 = document.getElementById("sec2").value.trim();
-        const sec3 = document.getElementById("sec3").value.trim();
+    let isValid = true;
 
-        if (!isValidPassword(password)) {
-            alert(
-                "Password must:\n" +
-                "- Be at least 8 characters\n" +
-                "- Include uppercase letter\n" +
-                "- Include lowercase letter\n" +
-                "- Include number\n" +
-                "- Include special character"
-            );
-            return;
-        }
+    /* 📱 MOBILE VALIDATION */
+    if (!/^\d{10}$/.test(mobile)) {
+        mobileError.textContent = "Mobile number must be exactly 10 digits";
+        isValid = false;
+    }
 
-        if (password !== confirmPassword) {
-            alert("Passwords do not match");
-            return;
-        }
+    /* 📧 EMAIL VALIDATION */
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        emailError.textContent = "Please enter a valid email address";
+        isValid = false;
+    }
 
-        if (sec1 === "" || sec2 === "" || sec3 === "") {
-            alert("All security questions must be answered");
-            return;
-        }
+    /* 🔐 PASSWORD POLICY */
+    const passwordPattern =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}$/;
 
+    if (!passwordPattern.test(password)) {
+        passwordError.textContent =
+            "Password must be at least 8 characters with uppercase, lowercase, and special character";
+        isValid = false;
+    }
+
+    /* 🔁 CONFIRM PASSWORD */
+    if (password !== confirmPassword) {
+        confirmPasswordError.textContent = "Passwords do not match";
+        isValid = false;
+    }
+
+    /* ✅ FINAL CHECK */
+    if (isValid) {
         alert("Registration successful!");
-        window.location.href = "index.html";
-    });
-
+        // window.location.href = "index.html"; // login page
+    }
 });
-
-/* Password Validation Function */
-function isValidPassword(password) {
-    const regex =
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
-    return regex.test(password);
-}
